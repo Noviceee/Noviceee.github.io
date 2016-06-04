@@ -1,16 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE html><html class=''>
+<head><script src='//assets.codepen.io/assets/editor/live/console_runner-d0a557e5cb67f9cd9bbb9673355c7e8e.js'></script><script src='//assets.codepen.io/assets/editor/live/events_runner-21174b4c7273cfddc124acb0876792e0.js'></script><script src='//assets.codepen.io/assets/editor/live/css_live_reload_init-7618a0de08795409d8f6c9ef6805f7b2.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="canonical" href="http://codepen.io/new12345/pen/ZOGxdZ" />
+
+
+<style class="cp-pen-styles"></style></head><body>
+
   
  <html lang="en"> 
  <head> 
  <meta charset="UTF-8"> 
- <title>document</title>
- 
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript"> 
-  google.load("jquery", "1.8.1"); 
-  google.load("jqueryui", "1.7.2"); 
-</script>  <!--引入jQuery-->
-
+ <title>NTU Food Map</title>
+ <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script> 引入jQuery-->
   </head> 
   
   <body> 
@@ -78,14 +77,13 @@
 </form><br>
     <a href="#" onclick="Sum();" class="botton">計算</a>
     <!--<span id="output"></span>-->
-<script type="text/javascript">
-  $(document).ready(function(){ //引入jQuery
+<script>
+  //$(document).ready(function(){ 引入jQuery
   var Sum =function() {
   // 將 id=pricerequest 的selected值取出來
   var a = $("#pricerequest").val();
   // 將 id=CPValue 的selected值取出來
   var b = $("#CPValue").val();
-          }); //引入jQuery
 
   var c = a + b ;
     
@@ -397,9 +395,11 @@
   // 將 c 顯示出來
   //$("#output").text(c);
 }
-
+//}); //引入jQuery
 </script>
 
 <!--<span id="output"></span><br>-->
   </body> 
   </html>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+</body></html>
