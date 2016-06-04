@@ -3,8 +3,8 @@
  <html lang="en"> 
  <head> 
  <meta charset="UTF-8"> 
- <title>NTU Food Map</title>
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script> <!--引入jQuery-->
+ <title>document</title>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" ></script> <!--引入jQuery-->
   </head> 
   
   <body> 
@@ -72,13 +72,14 @@
 </form><br>
     <a href="#" onclick="Sum();" class="botton">計算</a>
     <!--<span id="output"></span>-->
-<script>
+<script type="text/javascript">
   $(document).ready(function(){ //引入jQuery
   var Sum =function() {
   // 將 id=pricerequest 的selected值取出來
   var a = $("#pricerequest").val();
   // 將 id=CPValue 的selected值取出來
   var b = $("#CPValue").val();
+          }); //引入jQuery
 
   var c = a + b ;
     
@@ -390,7 +391,7 @@
   // 將 c 顯示出來
   //$("#output").text(c);
 }
-}); //引入jQuery
+
 </script>
 
 <!--<span id="output"></span><br>-->
