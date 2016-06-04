@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-  <html lang="en"> 
+  
+ <html lang="en"> 
  <head> 
  <meta charset="UTF-8"> 
  <title>Document</title>
@@ -9,7 +10,7 @@
     <span style=
           "font-family:DFKai-sb;
            font-size:40px;
-           color:red;"
+           color:orange;"
           >台大美食地圖
     </span>
         <span style=
@@ -26,7 +27,367 @@
       <area shape="polygon" coords="485,475,475,490,483,510,492,495" href="http://noviceee.github.io/Xiaofu.html">
       <area shape="polygon" coords="215,680,208,705,215,728,223,705" href="http://noviceee.github.io/Yoshinoya.html">
         </map>
-      </a>
+      </a><p>
+         <span style=
+          "font-family:DFKai-sb;
+           font-size:32px;
+           color:red;"
+          >今天吃什麼?
+           </span><p>
+  
+    <form>
+       <span style=
+          "font-family:DFKai-sb;
+           font-size:20px;
+           color:black;"
+          >價格要求:
+           </span>
+<select id="pricerequest">
+  <option id="price">無限制</option>
+　<option id="price">90元以下</option>
+　<option id="price">90~120元</option>
+　<option id="price">120~160元</option>
+　<option id="price">160元以上</option>
+</select>
+</form><p>
       
+        <form>
+ <span style=
+          "font-family:DFKai-sb;
+           font-size:20px;
+           color:black;"
+          >CP值要求(最低):
+           </span>
+<select id="CPValue">
+  <option id="star">無限制</option>
+　<option id="star">1星</option>
+　<option id="star">2星</option>
+　<option id="star">3星</option>
+　<option id="star">4星</option>
+  <option id="star">5星</option>
+</select>
+</form><br>
+    <a href="#" onclick="Sum();" class="botton">計算</a><br>
+    <span id="output"></span>
+<script>
+var Sum =function() {
+  // 將 id=pricerequest 的selected值取出來
+  var a = $("#pricerequest").val();
+  // 將 id=CPValue 的selected值取出來
+  var b = $("#CPValue").val();
+
+  var c = a + b ;
+    
+  if( "無限制無限制" == c){
+    var minim = 0 ;
+    var maxim = 3 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+      case 2 :
+        document.location.href=
+          "http://noviceee.github.io/YixinPorkomurice.html" ;
+          break;
+      case 3 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+    }
+  }
+  else if( "無限制1星" == c){
+    var minim = 0 ;
+    var maxim = 3 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+      case 2 :
+        document.location.href=
+          "http://noviceee.github.io/YixinPorkomurice.html" ;
+          break;
+      case 3 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+  }
+  }
+  else if( "無限制2星" == c){
+    var minim = 0 ;
+    var maxim = 3 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+      case 2 :
+        document.location.href=
+          "http://noviceee.github.io/YixinPorkomurice.html" ;
+          break;
+      case 3 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+  }
+  }
+  else if( "無限制3星" == c){
+    var minim = 0 ;
+    var maxim = 2 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+      case 2 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+  }
+    }
+  else if( "無限制4星" == c){
+    var minim = 0 ;
+    var maxim = 2 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+      case 2 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+  }
+    }
+  else if( "無限制5星" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+  }
+    }
+  else if( "90元以下無限制" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/YixinPorkomurice.html" ;
+          break;
+  }
+    }
+  else if( "90元以下1星" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/YixinPorkomurice.html" ;
+          break;
+    }
+  }
+  else if( "90元以下2星" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/YixinPorkomurice.html" ;
+          break;
+    }
+  }
+  else if( "90元以下3星" == c){
+    document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  else if( "90元以下4星" == c){
+    document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  else if( "90元以下5星" == c){
+    document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  else if( "90~120元無限制" == c){
+    var minim = 0 ;
+    var maxim = 2 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+      case 2 :
+        document.location.href=
+          "http://noviceee.github.io/YixinPorkomurice.html" ;
+          break;
+    }
+  }
+  else if( "90~120元1星" == c){
+    var minim = 0 ;
+    var maxim = 2 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+      case 2 :
+        document.location.href=
+          "http://noviceee.github.io/YixinPorkomurice.html" ;
+          break;
+    }
+  }
+  else if( "90~120元2星" == c){
+    var minim = 0 ;
+    var maxim = 2 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+      case 2 :
+        document.location.href=
+          "http://noviceee.github.io/YixinPorkomurice.html" ;
+          break;
+    }
+  }
+  else if( "90~120元3星"== c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+    }
+  }
+  else if( "90~120元4星" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+    }
+  }
+  else if( "90~120元5星" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/SubwayTuna.html" ;
+          break;
+    }
+  }
+  else if( "120~160元無限制" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+    }
+  }
+  else if( "120~160元1星" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+    }
+  }
+  else if( "120~160元2星" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+    }
+  }
+  else if( "120~160元3星" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+    }
+  }
+  else if( "120~160元4星" == c){
+    var minim = 0 ;
+    var maxim = 1 ;
+    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    switch(random){
+      case 1 :
+        document.location.href=
+          "http://noviceee.github.io/韓泡豬C.html" ;
+          break;
+    }
+  }
+  else if( "120~160元5星" == c){
+     document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  else if( "160元以上無限制" == c){
+     document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  else if( "160元以上1星" == c){
+     document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  else if( "160元以上2星" == c){
+     document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  else if( "160元以上3星" == c){
+     document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  else if( "160元以上4星" == c){
+     document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  else if( "160元以上5星" == c){ 
+     document.location.href=
+      "http://noviceee.github.io/Sorry.html" ;
+  }
+  
+  // 將 c 顯示出來
+  //$("#output").text(c);
+}
+</script>
+
+<!--<span id="output"></span><br>-->
   </body> 
   </html>
