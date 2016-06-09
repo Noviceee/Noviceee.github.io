@@ -39,10 +39,9 @@
            font-size:20px;
            color:black;">預算:
            </span>
-          <form action="test.php" method="post">
+            <!--action="test.php" method="post"-->
             <input id="budget" type="text" name="irrelevant" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"><br>
           </form>
-        </form>
         <p>
 
           <form>
@@ -66,9 +65,9 @@
            color:black;">時段:
            </span>
               <select id="timenow">
-  <option id="thetime">早餐</option>
-　<option id="thetime">午餐</option>
-　<option id="thetime">晚餐</option>
+  <option >早餐</option>
+　<option >午餐</option>
+　<option >晚餐</option>
 </select>
             </form><br>
 
@@ -90,21 +89,21 @@
                   <td>韓式泡菜豬肉丼飯C餐</td>
                   <td data-price="129">129</td>
                   <td data-star="4">4</td>
-                  <td data-diningtime="bld">505</td>
+                  <td data-diningtime="505">505</td>
                   <td data-site="韓泡豬C">http://noviceee.github.io/韓泡豬C.html</td>
                 </tr>
                 <tr 2>
                   <td>6吋鮪魚美乃滋+甜餅</td>
                   <td data-price="119">119</td>
                   <td data-star="5">5</td>
-                  <td data-diningtime="bld">505</td>
+                  <td data-diningtime="505">505</td>
                   <td data-site="SubwayTuna">http://noviceee.github.io/SubwayTuna.html</td>
                 </tr>
                 <tr 3>
                   <td>一信麵家-照燒豬肉蛋包飯</td>
                   <td data-price="90">90</td>
                   <td data-star="2">2</td>
-                  <td data-diningtime="ld">73</td>
+                  <td data-diningtime="73">73</td>
                   <td data-site="YixinPorkomurice">http://noviceee.github.io/YixinPorkomurice.html</td>
                 </tr>
               </tbody>
@@ -146,21 +145,24 @@
     var c = 9;
   }
   //c = parseInt(c);
-
-  for(int i=0; i>=0 ; i++){
-    var array = $("td[data-price]");
-    var minim = 0 ;
-    var maxim = array.length ; 
-    var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;
-    var d = parseInt(window.thetable.rows.item(random).cells.item(3).innerText
-    if(parseInt(window.thetable.rows.item(random).cells.item(1).innerText <= a && parseInt(window.thetable.rows.item(random).cells.item(2).innerText >= b && d%c = 1){
-      document.location.href=window.thetable.rows.item(random).cells.item(4).innerText
+  
+  var i;
+     
+  for(i=0; i>=0; i++){
+    var array = $("td[data-diningtime]");
+    var minim = 1 ;
+    var maxim = array.length ;
+    var arandom = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;   
+    //var d = parseInt(window.thetable.rows.item(arandom).cells.item(3).innerText) ;
+    
+    if((parseInt(window.thetable.rows.item(arandom).cells.item(1).innerText) <= a) && (parseInt(window.thetable.rows.item(arandom).cells.item(2).innerText) >= b) && (parseInt(window.thetable.rows.item(arandom).cells.item(3).innerText) % c == 1)){
+      document.location.href=window.thetable.rows.item(arandom).cells.item(4).innerText ;
     }
-    else if(parseInt(window.thetable.rows.item(random).cells.item(1).innerText <= a && b == 6 && d%c = 1){ //b==6可能出錯
-      document.location.href=window.thetable.rows.item(random).cells.item(4).innerText
+    else if((parseInt(window.thetable.rows.item(arandom).cells.item(1).innerText) <= a) && (b == 6) && (parseInt(window.thetable.rows.item(arandom).cells.item(3).innerText) % c == 1)){ //b==6可能出錯
+      document.location.href=window.thetable.rows.item(arandom).cells.item(4).innerText ;
     }
     else{
-      continue;
+      console.log(arandom);
     }
   }
 
