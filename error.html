@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NTU Food Map</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- javascript sleep() -->
+  <script>
+    function sleep(milliseconds) {
+     var start = new Date().getTime();
+     for (var i = 0; i < 1e7; i++) {
+         if ((new Date().getTime() - start) > milliseconds){
+         break;
+       }
+      }
+     }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://noviceee.github.io/Home" style="font-family:DFKai-sb;
+           font-size:40px; color:orange;">台大美食地圖  </a>
+      <a class="navbar-brand" href="http://noviceee.github.io/Home" style="font-family:cursive;
+           font-size:32px; color:brown;">NTU Food Map  </a>
+    </div>
+    </nav>
+  <p>
+    <span style=
+          "font-family:DFKai-sb;
+           font-size:40px;
+           color:blue;"
+          >請輸入預算
+    </span>
+
+            <!--<span id="output"></span><br>-->
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <!--從電腦直接引入-->
+            <script src="js/jquery-2.2.4.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="js/bootstrap.min.js"></script>
+            <!--引入my.js(Javascript可直接寫在此檔)-->
+            <script src="js/my.js"></script>
+</body>
