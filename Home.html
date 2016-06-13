@@ -4,6 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="shortcut icon" href="http://www.ifreesite.com/favicon/icon/1465807299.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NTU Food Map</title>
@@ -104,7 +105,6 @@
               </thead>
               <tbody>
                 <tr data-table>
-                  <!--原名1-->
                   <td>韓式泡菜豬肉丼飯C餐</td>
                   <td data-price="129">129</td>
                   <td data-star="4">4</td>
@@ -112,15 +112,13 @@
                   <td data-site="韓泡豬C">http://noviceee.github.io/韓泡豬C.html</td>
                 </tr>
                 <tr data-table>
-                  <!--原名2-->
                   <td>6吋鮪魚美乃滋+甜餅</td>
-                  <td data-price="119">119</td>
+                  <td data-price="129">129</td>
                   <td data-star="5">5</td>
                   <td data-diningtime="505">505</td>
                   <td data-site="SubwayTuna">http://noviceee.github.io/SubwayTuna.html</td>
                 </tr>
                 <tr data-table>
-                  <!--原名3-->
                   <td>一信麵家-照燒豬肉蛋包飯</td>
                   <td data-price="90">90</td>
                   <td data-star="2">2</td>
@@ -166,73 +164,44 @@
   else if("晚餐" == ct){
     var c = 9;
   }
-  //c = parseInt(c);
  
-  var i;
-
   if(isNaN(a)){
     document.location.href="http://noviceee.github.io/error.html" ;
     return;
   }
-     
-     
-  for(i=0; i>=0; i++){
-    var array = $("td[data-diningtime]");
+
+  var min = parseInt(window.thetable.rows.item(1).cells.item(1).innerText);
+  var array = $("td[data-diningtime]");
+  var g;
+  for(g=2; g<=array.length; g++){
+    if(parseInt(window.thetable.rows.item(g).cells.item(1).innerText)<min)
+      min = parseInt(window.thetable.rows.item(g).cells.item(1).innerText);
+  }
+  if(a<min){
+    document.location.href="http://noviceee.github.io/Sorry.html" ;
+    return;
+  }
+
+  var i;
+  for(i=0;i<=5000;i++){
     var minim = 1 ;
     var maxim = array.length ;
     var arandom = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
     
     if((parseInt(window.thetable.rows.item(arandom).cells.item(1).innerText) <= a) && (parseInt(window.thetable.rows.item(arandom).cells.item(2).innerText) >= b) && (parseInt(window.thetable.rows.item(arandom).cells.item(3).innerText) % c == 1)){
       document.location.href=window.thetable.rows.item(arandom).cells.item(4).innerText ;
-      break ;
+      return;
     }
     else if((parseInt(window.thetable.rows.item(arandom).cells.item(1).innerText) <= a) && (b == 6) && (parseInt(window.thetable.rows.item(arandom).cells.item(3).innerText) % c == 1)){ 
       document.location.href=window.thetable.rows.item(arandom).cells.item(4).innerText ;
-      break ;
+      return;
     }
     else{
       continue;
     }
   }
-
-  // var c = a + b ;
-    
-  // if( "無限制無限制" == c){
-  //   var minim = 0 ;
-  //   var maxim = 3 ;
-  //   var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
-  //   switch(random){
-  //     case 1 :
-  //       document.location.href=
-  //         "http://noviceee.github.io/SubwayTuna.html" ;
-  //         break;
-  //     case 2 :
-  //       document.location.href=
-  //         "http://noviceee.github.io/YixinPorkomurice.html" ;
-  //         break;
-  //     case 3 :
-  //       document.location.href=
-  //         "http://noviceee.github.io/韓泡豬C.html" ;
-  //         break;
-  //   }
-  // }
-  
-  // else if( "120~160元無限制" == c){
-  //   var minim = 0 ;
-  //   var maxim = 1 ;
-  //   var random = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
-  //   switch(random){
-  //     case 1 :
-  //       document.location.href=
-  //         "http://noviceee.github.io/韓泡豬C.html" ;
-  //         break;
-  //   }
-  // }
-  // else if( "120~160元5星" == c){
-  //    document.location.href=
-  //     "http://noviceee.github.io/Sorry.html" ;
-  // }
-
+ 
+  document.location.href="http://noviceee.github.io/Sorry.html";
   
   // 將 c 顯示出來
   //$("#output").text(c);
