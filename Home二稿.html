@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="http://www.ifreesite.com/favicon/icon/1465807299.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NTU Food Map</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- javascript sleep() -->
+  <script>
+    function sleep(milliseconds) {
+     var start = new Date().getTime();
+     for (var i = 0; i < 1e7; i++) {
+         if ((new Date().getTime() - start) > milliseconds){
+         break;
+       }
+      }
+     }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://noviceee.github.io/Home" style="font-family:DFKai-sb;
+           font-size:40px; color:orange;">台大美食地圖  </a>
+      <a class="navbar-brand" href="http://noviceee.github.io/Home" style="font-family:cursive;
+           font-size:32px; color:brown;">NTU Food Map  </a>
+    </div>
+    </nav>
+  <p>
+    <a>
+      <img src="http://screenshot.net/67894f6.jpg" width="1200px" height="1072px" usemap="#map">
+      <map name="map">
+      <area shape="polygon" coords="454,900,448,925,456,940,462,922" href="http://noviceee.github.io/Subway.html">
+      <area shape="polygon" coords="485,475,475,490,483,510,492,495" href="http://noviceee.github.io/Xiaofu.html">
+      <area shape="polygon" coords="215,680,208,705,215,728,223,705" href="http://noviceee.github.io/Yoshinoya.html">
+        </map>
+    </a>
+    <p>
+      <hr>
+      <span style="font-family:DFKai-sb;
+           font-size:32px;
+           color:red;">今天吃什麼?
+           </span>
+      <p>
+
+        <form>
+          <span style="font-family:DFKai-sb;
+           font-size:20px;
+           color:black;">預算:
+           </span>
+          <!--action="test.php" method="post"-->
+          <input id="budget" type="text" placeholder="必填" name="irrelevant" onkeyup="value=value.replace(/[^\d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"><br>
+        </form>
+        <p>
+
+          <form>
+            <span style="font-family:DFKai-sb;
+           font-size:20px;
+           color:black;">CP值要求(最低):
+           </span>
+            <select id="CPValue">
+  <option >無限制</option>
+　<option >1星</option>
+　<option >2星</option>
+　<option >3星</option>
+　<option >4星</option>
+  <option >5星</option>
+</select>
+          </form>
+          <p>
+            <form>
+              <span style="font-family:DFKai-sb;
+           font-size:20px;
+           color:black;">時段:
+           </span>
+              <select id="timenow">
+  <option >早餐</option>
+　<option >午餐</option>
+　<option >晚餐</option>
+</select>
+            </form><br>
+
+            <a href="#" onclick="Sum();" class="btn btn-danger">
+              <span class="glyphicon glyphicon-cutlery"></span>
+              開始覓食</a><p>
+            <!--<span id="output"></span>-->
+            &nbsp;
+
+            <table style="display:none" id="thetable" >
+              <thead>
+                <tr>
+                  <th>名稱</th>
+                  <th>價格</th>
+                  <th>評價</th>
+                  <th>時段</th>
+                  <th>網址</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-table>
+                  <td>韓式泡菜豬肉丼飯C餐</td>
+                  <td data-price="129">129</td>
+                  <td data-star="4">4</td>
+                  <td data-diningtime="505">505</td>
+                  <td data-site="韓泡豬C">http://noviceee.github.io/韓泡豬C.html</td>
+                </tr>
+                <tr data-table>
+                  <td>6吋鮪魚美乃滋+甜餅</td>
+                  <td data-price="129">129</td>
+                  <td data-star="5">5</td>
+                  <td data-diningtime="505">505</td>
+                  <td data-site="SubwayTuna">http://noviceee.github.io/SubwayTuna.html</td>
+                </tr>
+                <tr data-table>
+                  <td>一信麵家-照燒豬肉蛋包飯</td>
+                  <td data-price="90">90</td>
+                  <td data-star="2">2</td>
+                  <td data-diningtime="73">73</td>
+                  <td data-site="YixinPorkomurice">http://noviceee.github.io/YixinPorkomurice.html</td>
+                </tr>
+              </tbody>
+            </table>
+             </div>
+            <script>
+   var Sum =function() {
+  // 將 id=pricerequest 的選取值取出來
+  var a = $("#budget").val();
+  a = parseInt(a);
+  // 將 id=CPValue 的選取值取出來
+  var bt = $("#CPValue").val();
+  if("無限制" == bt){
+    var b = 6;     
+  }
+  else if("1星" == bt){
+    var b = 1;
+  }
+  else if("2星" == bt){
+    var b = 2;
+  }
+  else if("3星" == bt){
+    var b = 3;
+  }
+  else if("4星" == bt){
+    var b = 4;
+  }
+  else if("5星" == bt){
+    var b = 5;
+  }
+  // 將 id=timenow 的選取值取出來
+  var ct = $("#timenow").val();
+  if("早餐" == ct){
+    var c = 7;
+  }
+  else if("午餐" == ct){
+    var c = 8;
+  }
+  else if("晚餐" == ct){
+    var c = 9;
+  }
+ 
+  if(isNaN(a)){
+    document.location.href="http://noviceee.github.io/error.html" ;
+    return;
+  }
+
+  var min = parseInt(window.thetable.rows.item(1).cells.item(1).innerText);
+  var array = $("td[data-diningtime]");
+  var g;
+  for(g=2; g<=array.length; g++){
+    if(parseInt(window.thetable.rows.item(g).cells.item(1).innerText)<min)
+      min = parseInt(window.thetable.rows.item(g).cells.item(1).innerText);
+  }
+  if(a<min){
+    document.location.href="http://noviceee.github.io/Sorry.html" ;
+    return;
+  }
+
+  var i;
+  for(i=0;i<=5000;i++){
+    var minim = 1 ;
+    var maxim = array.length ;
+    var arandom = Math.floor(Math.random() * ( maxim - minim + 1)) + minim ;  
+    
+    if((parseInt(window.thetable.rows.item(arandom).cells.item(1).innerText) <= a) && (parseInt(window.thetable.rows.item(arandom).cells.item(2).innerText) >= b) && (parseInt(window.thetable.rows.item(arandom).cells.item(3).innerText) % c == 1)){
+      document.location.href=window.thetable.rows.item(arandom).cells.item(4).innerText ;
+      return;
+    }
+    else if((parseInt(window.thetable.rows.item(arandom).cells.item(1).innerText) <= a) && (b == 6) && (parseInt(window.thetable.rows.item(arandom).cells.item(3).innerText) % c == 1)){ 
+      document.location.href=window.thetable.rows.item(arandom).cells.item(4).innerText ;
+      return;
+    }
+    else{
+      continue;
+    }
+  }
+ 
+  document.location.href="http://noviceee.github.io/Sorry.html";
+  
+  // 將 c 顯示出來
+  //$("#output").text(c);
+}
+</script>
+
+            <!--<span id="output"></span><br>-->
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <!--從電腦直接引入-->
+            <script src="js/jquery-2.2.4.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="js/bootstrap.min.js"></script>
+            <!--引入my.js(Javascript可直接寫在此檔)-->
+            <script src="js/my.js"></script>
+</body>
