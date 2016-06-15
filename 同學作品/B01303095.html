@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>計概作業#2 超簡易實用月曆</title>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>超簡易實用月曆 <small>by B01303095 經濟三楊雅晴</small></h1>
+      </div>
+
+      <div class="jumbotron">
+        <h2 id="date" class="text-center"></h2>
+        <center>
+          <button id="previous-month" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-arrow-left"></span> 上個月
+          </button>
+          <button id="next-month" class="btn btn-info btn-lg">
+            下個月 <span class="glyphicon glyphicon-arrow-right"></span>
+          </button>
+        </center>
+      </div>
+      <table id="calendar" class="table table-bordered">
+        <thead>
+          <tr>
+            <td>ㄧ</td>
+            <td>二</td>
+            <td>三</td>
+            <td>四</td>
+            <td>五</td>
+            <td>六</td>
+            <td>日</td>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
